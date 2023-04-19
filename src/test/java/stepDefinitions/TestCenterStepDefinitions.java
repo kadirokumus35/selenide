@@ -55,7 +55,9 @@ tCP.mesaj.shouldBe(visible);//selenide assertion
         }
 
         if (text.equals("Football") && !tCP.football.isSelected()){
+
             tCP.football.click();
+
             tCP.football.shouldBe(checked);
         }
     }
