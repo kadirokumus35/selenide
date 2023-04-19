@@ -51,12 +51,12 @@ tCP.mesaj.shouldBe(visible);//selenide assertion
             tCP.red.shouldNotBe(checked);//secili olmadigini test ediyoruz ama zaten if icinde yazmistik
             tCP.red.click();//sec
             tCP.red.shouldBe(checked);//secili oldugunu test et
+
         }
 
         if (text.equals("Football") && !tCP.football.isSelected()){
             tCP.football.click();
             tCP.football.shouldBe(checked);
-
         }
     }
 
