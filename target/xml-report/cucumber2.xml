@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="2.511" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="checkbox ve radio button" name="TC03 radio" time="2.42">
+<testsuite name="Cucumber" time="9.852" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="alerts" name="TC01 alert" time="9.748">
 <system-out><![CDATA[
-Given kullanici "https://testcenter.techproeducation.com/index.php?page=radio-buttons" adresine gider.passed
-And "Football" secili degilse sec...........................................passed
-And sayfayi acik tutar......................................................passed
+Given kullanici "https://testcenter.techproeducation.com/index.php?page=javascript-alerts" adresine gider.passed
+And alert prompt butonuna tiklar............................................passed
+And kullanici alerte "nasilsin" metnini yazar ve OK e tiklar................passed
+Then kullanici sonucun "nasilsin" icerdigini dogrular.......................passed
 ]]></system-out>
 </testcase>
 </testsuite>

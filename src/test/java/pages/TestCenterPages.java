@@ -25,4 +25,17 @@ public SelenideElement checkbox2=$(By.id("box2"));
 //radio elementleri
     public SelenideElement red = $(By.id("red"));
     public  SelenideElement football = $(By.id("football"));
+
+    //dropdown
+    public  SelenideElement yil = $(By.id("year"));
+    public  SelenideElement ay = $(By.id("month"));
+    public  SelenideElement gun = $(By.id("day"));
+
+    //alert stepdef
+    public  SelenideElement  promptButton=$(By.xpath("//button[@onclick='jsPrompt()']"));
+
+    public SelenideElement sonuc = $ ("#result"); // css ile locate aldik
+
+    //iframe
+public SelenideElement techProLink = $(By.xpath("//a[@type='button']"));
 }

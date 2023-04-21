@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="10.08" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="iframe _ windows" name="TC01 iframe ve window" time="9.982">
+<system-out><![CDATA[
+Given kullanici "https://testcenter.techproeducation.com/index.php?page=iframe" adresine gider.passed
+And switch to frame 1.......................................................passed
+And kullanici back to techproeducation.com linkine tiklar...................passed
+And switch to window 2......................................................passed
+Then sayfayi acik tutar.....................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
