@@ -4,14 +4,14 @@ package stepDefinitions;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import io.cucumber.java.en.*;
+
 import org.junit.Assert;
 import pages.TestCenterPages;
 
 import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selenide.sleep;
-import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class TestCenterStepDefinitions {
@@ -129,5 +129,27 @@ tCP.mesaj.shouldBe(visible);//selenide assertion
         System.out.println("yeni pencereye gecis yapildi");
        Thread.sleep(3000);
         System.out.println("yeni sayfa url'i : "+url());//yeni sayfa url'i verecektir
+    }
+
+    @And("kullanici source elementi target elementine surukler")
+    public void kullaniciSourceElementiTargetElementineSurukler() {
+        //selenide de selenium gibi action classdan obje olusturmaya gerek yok
+       // actions().dragAndDrop(tCP.kaynak,tCP.hedef);// bu sekilde calisir pass olur ama hareket olmaz
+        actions().dragAndDrop(tCP.kaynak,tCP.hedef).build().//baglantiyi olustur (optional)
+        perform();//verilen komutlari yap (zorunlu)
+
+    }
+
+    @And("kullanici source elementini {int} by {int} koordinatlarina surukler")
+    public void kullaniciSourceElementiniByKoordinatlarinaSurukler(int arg0, int arg1) {
+actions().dragAndDropBy(tCP.kaynak,arg0,arg1).build().perform();
+
+    }
+
+    @And("verilen coordinatlara {int} by {int} suruklendigini dogrular")
+    public void verilenCoordinatlaraBySuruklendiginiDogrular(int arg0, int arg1) {
+    String styleValue = tCP.kaynak.getAttribute("style");
+        System.out.println(styleValue);
+        Assert.assertTrue(styleValue.contains(String.valueOf(arg0))&&styleValue.contains(String.valueOf(arg1)));
     }
 }

@@ -38,4 +38,10 @@ public SelenideElement checkbox2=$(By.id("box2"));
 
     //iframe
 public SelenideElement techProLink = $(By.xpath("//a[@type='button']"));
+
+    //actions
+    public SelenideElement kaynak=$("#draggable");//css
+    public SelenideElement hedef=$("#droppable");//css
+
+
 }
