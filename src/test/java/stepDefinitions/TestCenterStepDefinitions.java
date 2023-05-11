@@ -3,9 +3,12 @@ package stepDefinitions;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.java.en.*;
 
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.TestCenterPages;
 
 import java.time.Duration;
@@ -151,5 +154,44 @@ actions().dragAndDropBy(tCP.kaynak,arg0,arg1).build().perform();
     String styleValue = tCP.kaynak.getAttribute("style");
         System.out.println(styleValue);
         Assert.assertTrue(styleValue.contains(String.valueOf(arg0))&&styleValue.contains(String.valueOf(arg1)));
+    }
+
+
+    @And("start butonuna tiklar")
+    public void startButonunaTiklar() {
+        tCP.startButton.click();
+    }
+
+    @Then("kullanici {string} metnini dogrular")
+    public void kullaniciMetniniDogrular(String arg0) {
+    // Assert.assertEquals(arg0,tCP.helloWorld.getText()); //fail. cunku bekleme sorunu var
+
+        //1.WEBDRIVERWAIT ile bekleme kullanilabilir
+
+        /*
+        WebDriverWait wait=new WebDriverWait(WebDriverRunner.getWebDriver(),Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.visibilityOf(tCP.helloWorld));//explicit wait
+        Assert.assertEquals(arg0,tCP.helloWorld.getText());//pass. explicit wait ile sorun cozuldu
+        */
+
+        //2.SELENİDE wait
+        /*
+        tCP.helloWorld.should(visible,Duration.ofSeconds(10));//selenide wait
+        Assert.assertEquals(arg0,tCP.helloWorld.getText());
+*/
+
+        tCP.helloWorld.shouldHave(text("Hello World!"),Duration.ofSeconds(10));//selenide wait
+
+
+    }
+
+    @And("tum ekran goruntusunu alir")
+    public void tumEkranGoruntusunuAlir() {
+
+    }
+
+    @And("google image goruntusunu al")
+    public void googleImageGoruntusunuAl() {
+
     }
 }

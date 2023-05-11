@@ -43,5 +43,9 @@ public SelenideElement techProLink = $(By.xpath("//a[@type='button']"));
     public SelenideElement kaynak=$("#draggable");//css
     public SelenideElement hedef=$("#droppable");//css
 
+    //explicit
+    public SelenideElement startButton=$(By.xpath("//div[@id='start']//button"));
+    public SelenideElement helloWorld=$(By.xpath("//div[@id='finish']//h4"));
+
 
 }
